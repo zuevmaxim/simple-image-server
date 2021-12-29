@@ -22,6 +22,11 @@ PUBLIC_DIR = None
 #             response.delete_cookie(c)
 #     return response
 
+def _hello(request):
+    from pyramid.response import Response
+    response = Response()
+    response.write('Hello!')
+    return response
 
 def _disp_images(request):
     """Display images."""
@@ -73,6 +78,8 @@ def _add_routes(config):
     # config.add_view(_disp_login, route_name='login')
     config.add_route('images', '/')
     config.add_view(_disp_images, route_name='images')
+    config.add_route('hello', '/hello')
+    config.add_view(_hello, route_name='hello')
     # config.add_route('logout', '/logout')
     # config.add_view(_logout, route_name='logout')
     config.add_static_view('static', 'static')
