@@ -48,7 +48,7 @@ python servermain.py `your image file directory`
 If you want to execute sample, 
 
 ```bash
-python main.py sample
+python main.py images
 ```
 
 ## Plugin
